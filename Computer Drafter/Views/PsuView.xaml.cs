@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace Computer_Drafter.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for PsuView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class PsuView : UserControl
     {
-        public MainWindow()
+        public PsuView()
         {
             InitializeComponent();
-        }
-
-        public void ApplicationClose_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
         }
     }
 }

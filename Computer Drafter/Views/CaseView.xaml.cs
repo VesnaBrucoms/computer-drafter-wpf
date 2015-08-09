@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace Computer_Drafter.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for CaseView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CaseView : UserControl
     {
-        public MainWindow()
+        public CaseView()
         {
             InitializeComponent();
-        }
-
-        public void ApplicationClose_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
         }
     }
 }

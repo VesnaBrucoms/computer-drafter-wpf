@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace Computer_Drafter.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for RamView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class RamView : UserControl
     {
-        public MainWindow()
+        public RamView()
         {
             InitializeComponent();
-        }
-
-        public void ApplicationClose_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
         }
     }
 }

@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace Computer_Drafter.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for SsdView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SsdView : UserControl
     {
-        public MainWindow()
+        public SsdView()
         {
             InitializeComponent();
-        }
-
-        public void ApplicationClose_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
         }
     }
 }

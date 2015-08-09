@@ -22,7 +22,7 @@
                 <MenuItem Header="Save" />
                 <MenuItem Header="Save As..." />
                 <Separator />
-                <MenuItem Header="_Exit" />
+                <MenuItem Header="_Exit" Click="ApplicationClose_Click" />
             </MenuItem>
             <MenuItem Header="Help">
                 <MenuItem Header="About" />
@@ -33,16 +33,33 @@
                 <TabItem Header="Overview">
                     <view:OverviewView />
                 </TabItem>
-                <TabItem Header="CPU" />
-                <TabItem Header="Motherboard" />
-                <TabItem Header="RAM" />
-                <TabItem Header="GPU" />
-                <TabItem Header="SSD" />
-                <TabItem Header="HDD" />
-                <TabItem Header="Disc Drive" />
-                <TabItem Header="PSU" />
-                <TabItem Header="Case" />
-                <TabItem Header="Other" />
+                <TabItem Header="Basics">
+                    <view:BasicsView />
+                </TabItem>
+                <TabItem Header="RAM">
+                    <view:RamView />
+                </TabItem>
+                <TabItem Header="GPU">
+                    <view:GpuView />
+                </TabItem>
+                <TabItem Header="SSD">
+                    <view:SsdView />
+                </TabItem>
+                <TabItem Header="HDD">
+                    <view:HddView />
+                </TabItem>
+                <TabItem Header="Disc Drive">
+                    <view:DiscDriveView />
+                </TabItem>
+                <TabItem Header="PSU">
+                    <view:PsuView />
+                </TabItem>
+                <TabItem Header="Case">
+                    <view:CaseView />
+                </TabItem>
+                <TabItem Header="Other">
+                    <view:OtherView />
+                </TabItem>
             </TabControl>
         </Grid>
 

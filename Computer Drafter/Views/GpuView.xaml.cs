@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace Computer_Drafter.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for GpuView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class GpuView : UserControl
     {
-        public MainWindow()
+        public GpuView()
         {
             InitializeComponent();
-        }
-
-        public void ApplicationClose_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
         }
     }
 }

@@ -13,5 +13,14 @@ namespace Computer_Drafter
     /// </summary>
     public partial class App : Application
     {
+        public void Application_Startup(object sender, StartupEventArgs e)
+        {
+            IniSettings.Ini.GetInstance.Read(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "//Computer Drafter", "settings");
+        }
+
+        public void Application_Exit(object sender, ExitEventArgs e)
+        {
+            IniSettings.Ini.GetInstance.Write(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "//Computer Drafter", "settings");
+        }
     }
 }
