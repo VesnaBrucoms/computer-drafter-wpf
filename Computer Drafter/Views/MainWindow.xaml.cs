@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Computer_Drafter
+namespace Computer_Drafter.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
