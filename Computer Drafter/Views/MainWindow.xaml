@@ -8,6 +8,39 @@
         mc:Ignorable="d"
         Title="Computer Drafter" Height="620" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New" />
+                <MenuItem Header="_Open..." />
+                <Separator />
+                <MenuItem Header="Save" />
+                <MenuItem Header="Save As..." />
+                <Separator />
+                <MenuItem Header="_Exit" />
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="About" />
+            </MenuItem>
+        </Menu>
+        <Grid Grid.Row="1">
+            <TabControl>
+                <TabItem Header="CPU" />
+                <TabItem Header="Motherboard" />
+                <TabItem Header="RAM" />
+                <TabItem Header="GPU" />
+                <TabItem Header="HDD" />
+                <TabItem Header="Disc Drive" />
+            </TabControl>
+        </Grid>
+
+        <StatusBar Grid.Row="2">
+            <StatusBarItem />
+        </StatusBar>
     </Grid>
 </Window>
