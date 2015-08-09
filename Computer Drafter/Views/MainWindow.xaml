@@ -30,17 +30,24 @@
         </Menu>
         <Grid Grid.Row="1">
             <TabControl>
+                <TabItem Header="Overview">
+                    <view:OverviewView />
+                </TabItem>
                 <TabItem Header="CPU" />
                 <TabItem Header="Motherboard" />
                 <TabItem Header="RAM" />
                 <TabItem Header="GPU" />
+                <TabItem Header="SSD" />
                 <TabItem Header="HDD" />
                 <TabItem Header="Disc Drive" />
+                <TabItem Header="PSU" />
+                <TabItem Header="Case" />
+                <TabItem Header="Other" />
             </TabControl>
         </Grid>
 
         <StatusBar Grid.Row="2">
-            <StatusBarItem />
+            <StatusBarItem>Test</StatusBarItem>
         </StatusBar>
     </Grid>
 </Window>
