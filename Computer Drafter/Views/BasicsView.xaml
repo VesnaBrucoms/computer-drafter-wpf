@@ -4,14 +4,21 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Computer_Drafter.Views"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:viewmodel="clr-namespace:Computer_Drafter.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="786" d:DesignWidth="521">
     <Grid Margin="5,15,5,5">
+        <Grid.DataContext>
+            <viewmodel:BasicViewModel />
+        </Grid.DataContext>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
+            <RowDefinition Height="30" />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
 
+        <!--#region CPU-->
         <Grid Grid.Row="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
@@ -24,8 +31,15 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="0.1*" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="0.1*" />
                     <ColumnDefinition Width="auto" />
                     <ColumnDefinition Width="0.1*" />
                     <ColumnDefinition Width="1*" />
@@ -36,21 +50,68 @@
                 <ComboBox Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Width="75" />
 
                 <TextBlock Grid.Row="0" Grid.Column="2" Text="Name:" />
-                <TextBox Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Width="150" />
+                <TextBox Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Width="150" Text="{Binding Path=CpuName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                
+                <TextBlock Grid.Row="0" Grid.Column="7" Text="Price:" />
+                <xctk:DecimalUpDown Grid.Row="1" Grid.Column="7" HorizontalAlignment="Left" Width="75" FormatString="C2" Increment="1" Minimum="0" Value="{Binding Path=CpuPrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Cores:" />
+                <ComboBox Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left" Width="75" />
+
+                <TextBlock Grid.Row="3" Grid.Column="2" Text="Clock:" />
+                <TextBox Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" Width="75" Text="{Binding Path=CpuClock, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                <TextBlock Grid.Row="3" Grid.Column="4" Text="Socket:" />
+                <ComboBox Grid.Row="4" Grid.Column="4" HorizontalAlignment="Left" Width="75" />
             </Grid>
         </Grid>
+        <!--#endregion-->
 
-        <Grid Grid.Row="1">
+        <!--#region Motherboard-->
+        <Grid Grid.Row="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
-                <RowDefinition Height="auto" />
+                <RowDefinition Height="10" />
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="auto" />
-            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" FontFamily="Segoe UI" FontSize="12pt" Foreground="#003399" Text="Select Motherboard Settings and Features" />
+            <Grid Grid.Row="2" Margin="15,0,15,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="0.1*" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="0.1*" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="0.1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Name:" />
+                <TextBox Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Width="150" />
+
+                <TextBlock Grid.Row="0" Grid.Column="2" Text="Chipset:" />
+                <ComboBox Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Width="75" />
+
+                <TextBlock Grid.Row="0" Grid.Column="7" Text="Price:" />
+                <xctk:DecimalUpDown Grid.Row="1" Grid.Column="7" HorizontalAlignment="Left" Width="75" FormatString="C2" Increment="1" Minimum="0" Value="0.00" />
+
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Memory Capacity:" />
+                <ComboBox Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left" Width="75" />
+                <TextBlock Grid.Row="3" Grid.Column="2" Text="Memory Type:" />
+                <ComboBox Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" Width="75" />
+                <TextBlock Grid.Row="3" Grid.Column="4" Text="Memory Frequancy:" />
+                <ComboBox Grid.Row="4" Grid.Column="4" HorizontalAlignment="Left" Width="75" />
+            </Grid>
         </Grid>
+        <!--#endregion-->
     </Grid>
 </UserControl>
