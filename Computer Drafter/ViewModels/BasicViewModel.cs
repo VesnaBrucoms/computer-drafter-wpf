@@ -34,13 +34,19 @@ namespace Computer_Drafter.ViewModels
             }
         }
 
-        public string CpuBrand
+        public List<string> GetCpuBrandList
         {
             get { return cpu.Brand; }
+        }
+
+        public string SetCpuBrand
+        {
+            get { return cpu.SelectedBrand; }
             set
             {
-                cpu.Brand = value;
-                OnPropertyChanged("CpuBrand");
+                cpu.SelectedBrand = value;
+                OnPropertyChanged("SetCpuBrand");
+                OnPropertyChanged("GetCpuSocketList");
             }
         }
 
@@ -51,6 +57,89 @@ namespace Computer_Drafter.ViewModels
             {
                 cpu.Clock = value;
                 OnPropertyChanged("CpuClock");
+            }
+        }
+
+        public List<string> GetCpuSocketList
+        {
+            get
+            {
+                if (cpu.SelectedBrand == "AMD")
+                    return cpu.AmdSockets;
+                else if (cpu.SelectedBrand == "Intel")
+                    return cpu.IntelSockets;
+                else
+                    return new List<string>();
+            }
+        }
+
+        public string SetCpuSocket
+        {
+            get { return cpu.Sockets; }
+            set
+            {
+                cpu.Sockets = value;
+                OnPropertyChanged("SetCpuSocket");
+            }
+        }
+
+        public string MotherboardName
+        {
+            get { return motherboard.Name; }
+            set
+            {
+                motherboard.Name = value;
+                OnPropertyChanged("MotherboardName");
+            }
+        }
+
+        public decimal MotherboardPrice
+        {
+            get { return motherboard.Price; }
+            set
+            {
+                motherboard.Price = value;
+                OnPropertyChanged("MotherboardPrice");
+            }
+        }
+
+        public string MotherboardChipset
+        {
+            get { return motherboard.Chipset; }
+            set
+            {
+                motherboard.Chipset = value;
+                OnPropertyChanged("MotherboardChipset");
+            }
+        }
+
+        public string MotherboardMemCap
+        {
+            get { return motherboard.MemoryCapacity; }
+            set
+            {
+                motherboard.MemoryCapacity = value;
+                OnPropertyChanged("MotherboardMemCap");
+            }
+        }
+
+        public string MotherboardMemType
+        {
+            get { return motherboard.MemoryType; }
+            set
+            {
+                motherboard.MemoryType = value;
+                OnPropertyChanged("MotherboardMemType");
+            }
+        }
+
+        public string MotherboardMemFreq
+        {
+            get { return motherboard.MemoryFrequancy; }
+            set
+            {
+                motherboard.MemoryFrequancy = value;
+                OnPropertyChanged("MotherboardMemFreq");
             }
         }
         #endregion

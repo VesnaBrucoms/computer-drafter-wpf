@@ -47,7 +47,7 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="Brand:" />
-                <ComboBox Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Width="75" />
+                <ComboBox Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Width="75" SelectedIndex="0" ItemsSource="{Binding Path=GetCpuBrandList}" SelectedValue="{Binding Path=SetCpuBrand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
                 <TextBlock Grid.Row="0" Grid.Column="2" Text="Name:" />
                 <TextBox Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Width="150" Text="{Binding Path=CpuName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
@@ -62,7 +62,7 @@
                 <TextBox Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" Width="75" Text="{Binding Path=CpuClock, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
                 <TextBlock Grid.Row="3" Grid.Column="4" Text="Socket:" />
-                <ComboBox Grid.Row="4" Grid.Column="4" HorizontalAlignment="Left" Width="75" />
+                <ComboBox Grid.Row="4" Grid.Column="4" HorizontalAlignment="Left" Width="75" ItemsSource="{Binding Path=GetCpuSocketList, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" SelectedValue="{Binding Path=SetCpuSocket, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             </Grid>
         </Grid>
         <!--#endregion-->
@@ -96,13 +96,13 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="Name:" />
-                <TextBox Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Width="150" />
+                <TextBox Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Width="150" Text="{Binding Path=MotherboardName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
                 <TextBlock Grid.Row="0" Grid.Column="2" Text="Chipset:" />
                 <ComboBox Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Width="75" />
 
                 <TextBlock Grid.Row="0" Grid.Column="7" Text="Price:" />
-                <xctk:DecimalUpDown Grid.Row="1" Grid.Column="7" HorizontalAlignment="Left" Width="75" FormatString="C2" Increment="1" Minimum="0" Value="0.00" />
+                <xctk:DecimalUpDown Grid.Row="1" Grid.Column="7" HorizontalAlignment="Left" Width="75" FormatString="C2" Increment="1" Minimum="0" Value="{Binding Path=MotherboardPrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="Memory Capacity:" />
                 <ComboBox Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left" Width="75" />
