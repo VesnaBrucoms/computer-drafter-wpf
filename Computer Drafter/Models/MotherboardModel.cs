@@ -15,7 +15,6 @@ namespace Computer_Drafter.Models
         private string selMemCap;
         private List<string> memTypes;
         private string selMemType;
-        private List<string> memFreqs;
         private string selMemFreq;
 
         #region Properties
@@ -59,7 +58,7 @@ namespace Computer_Drafter.Models
 
         public List<string> MemoryFrequencies
         {
-            get { return memFreqs; }
+            get { return FrequencyData.GetFrequencies; }
         }
 
         public string SelectedMemoryFreq
@@ -115,22 +114,6 @@ namespace Computer_Drafter.Models
             memTypes.Add("DDR2");
             memTypes.Add("DDR3");
             memTypes.Add("DDR4");
-
-            memFreqs = new List<string>();
-            memFreqs.Add("266");
-            memFreqs.Add("333");
-            memFreqs.Add("400");
-            memFreqs.Add("533");
-            memFreqs.Add("667");
-            memFreqs.Add("800");
-            memFreqs.Add("1600");
-            memFreqs.Add("1800+");
-            memFreqs.Add("2133");
-            memFreqs.Add("2400");
-            memFreqs.Add("2666+");
-            memFreqs.Add("2800+");
-            memFreqs.Add("3000+");
-            memFreqs.Add("3200+");
         }
     }
 }

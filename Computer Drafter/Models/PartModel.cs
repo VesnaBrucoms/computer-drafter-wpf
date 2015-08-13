@@ -11,8 +11,8 @@ namespace Computer_Drafter.Models
     /// </summary>
     abstract class PartModel
     {
-        private string name;
-        private decimal price;
+        protected string name;
+        protected decimal price;
 
         public string Name
         {

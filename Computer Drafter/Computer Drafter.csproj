@@ -67,10 +67,14 @@
     <Compile Include="InputOutput\File.cs" />
     <Compile Include="Models\ComputerModel.cs" />
     <Compile Include="Models\CpuModel.cs" />
+    <Compile Include="Models\FrequencyData.cs" />
     <Compile Include="Models\MotherboardModel.cs" />
     <Compile Include="Models\PartModel.cs" />
+    <Compile Include="Models\RamModel.cs" />
     <Compile Include="ViewModels\BasicViewModel.cs" />
     <Compile Include="ViewModels\Commands\DelegateCommand.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\RamViewModel.cs" />
     <Compile Include="Views\AboutView\AboutWindow.xaml.cs">
       <DependentUpon>AboutWindow.xaml</DependentUpon>
     </Compile>

@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Computer_Drafter"
         xmlns:view="clr-namespace:Computer_Drafter.Views"
+        xmlns:viewmodel="clr-namespace:Computer_Drafter.ViewModels"
         mc:Ignorable="d"
-        Title="Computer Drafter" Height="620" Width="800">
+        Title="{Binding Path=GetWindowTitle, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Height="620" Width="800">
+    <Window.DataContext>
+        <viewmodel:MainWindowViewModel />
+    </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
