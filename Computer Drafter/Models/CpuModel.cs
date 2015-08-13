@@ -10,12 +10,14 @@ namespace Computer_Drafter.Models
     {
         private List<string> brand;
         private string selBrand;
-        private string cores;
+        private List<string> cores;
+        private string selCores;
         private string clock;
         private List<string> amdSockets;
         private List<string> intelSockets;
         private string selSocket;
 
+        #region Properties
         public List<string> Brand
         {
             get { return brand; }
@@ -27,10 +29,15 @@ namespace Computer_Drafter.Models
             set { selBrand = value; }
         }
 
-        public string Cores
+        public List<string> Cores
         {
             get { return cores; }
-            set { cores = value; }
+        }
+
+        public string SelectedCores
+        {
+            get { return selCores; }
+            set { selCores = value; }
         }
 
         public string Clock
@@ -54,12 +61,23 @@ namespace Computer_Drafter.Models
             get { return selSocket; }
             set { selSocket = value; }
         }
+        #endregion
 
         public CpuModel()
         {
             brand = new List<string>();
             brand.Add("AMD");
             brand.Add("Intel");
+
+            cores = new List<string>();
+            cores.Add("1");
+            cores.Add("2");
+            cores.Add("3");
+            cores.Add("4");
+            cores.Add("6");
+            cores.Add("8");
+            cores.Add("12");
+            cores.Add("16");
 
             amdSockets = new List<string>();
             amdSockets.Add("940");
@@ -80,6 +98,8 @@ namespace Computer_Drafter.Models
             intelSockets.Add("LGA 771");
             intelSockets.Add("LGA 775");
             intelSockets.Add("LGA 988");
+            intelSockets.Add("LGA 1150");
+            intelSockets.Add("LGA 1151");
             intelSockets.Add("LGA 1155");
             intelSockets.Add("LGA 1156");
             intelSockets.Add("LGA 1356");

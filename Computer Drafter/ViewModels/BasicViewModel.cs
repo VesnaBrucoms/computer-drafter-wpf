@@ -51,6 +51,21 @@ namespace Computer_Drafter.ViewModels
             }
         }
 
+        public List<string> GetCpuCoresList
+        {
+            get { return cpu.Cores; }
+        }
+
+        public string SetCpuCores
+        {
+            get { return cpu.SelectedCores; }
+            set
+            {
+                cpu.SelectedCores = value;
+                OnPropertyChanged("SetCpuCores");
+            }
+        }
+
         public string CpuClock
         {
             get { return cpu.Clock; }

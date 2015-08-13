@@ -56,7 +56,7 @@
                 <xctk:DecimalUpDown Grid.Row="1" Grid.Column="7" HorizontalAlignment="Left" Width="75" FormatString="C2" Increment="1" Minimum="0" Value="{Binding Path=CpuPrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="Cores:" />
-                <ComboBox Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left" Width="75" />
+                <ComboBox Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left" Width="75" SelectedIndex="0" ItemsSource="{Binding Path=GetCpuCoresList}" SelectedValue="{Binding Path=SetCpuCores, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
                 <TextBlock Grid.Row="3" Grid.Column="2" Text="Clock:" />
                 <TextBox Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" Width="75" Text="{Binding Path=CpuClock, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
@@ -108,7 +108,7 @@
                 <ComboBox Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left" Width="75" SelectedIndex="0" ItemsSource="{Binding Path=GetMotherboardMemCapList}" SelectedValue="{Binding Path=SetMotherboardMemCap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <TextBlock Grid.Row="3" Grid.Column="2" Text="Memory Type:" />
                 <ComboBox Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" Width="100" SelectedIndex="0" ItemsSource="{Binding Path=GetMotherboardMemTypeList}" SelectedValue="{Binding Path=SetMotherboardMemType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                <TextBlock Grid.Row="3" Grid.Column="4" Text="Memory Frequency:" />
+                <TextBlock Grid.Row="3" Grid.Column="4" Text="Memory Frequency (MHz):" />
                 <ComboBox Grid.Row="4" Grid.Column="4" HorizontalAlignment="Left" Width="75" SelectedIndex="0" ItemsSource="{Binding Path=GetMotherboardMemFreqList}" SelectedValue="{Binding Path=SetMotherboardMemFreq, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             </Grid>
         </Grid>

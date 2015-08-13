@@ -86,19 +86,17 @@ namespace Computer_Drafter.Models
             amdChipsets.Add("G34 Opteron");
 
             intelChipsets = new List<string>();
-            intelChipsets.Add("915G");
-            intelChipsets.Add("B75");
-            intelChipsets.Add("G41");
-            intelChipsets.Add("H55");
-            intelChipsets.Add("H57");
-            intelChipsets.Add("H61");
-            intelChipsets.Add("H67");
-            intelChipsets.Add("H77");
-            intelChipsets.Add("NM10");
-            intelChipsets.Add("P67");
-            intelChipsets.Add("Z68");
+            intelChipsets.Add("B85");
+            intelChipsets.Add("H81");
+            intelChipsets.Add("H87");
+            intelChipsets.Add("H97");
+            intelChipsets.Add("Q85");
+            intelChipsets.Add("Q87");
             intelChipsets.Add("Z77");
+            intelChipsets.Add("Z87");
+            intelChipsets.Add("Z97");
             intelChipsets.Add("X79");
+            intelChipsets.Add("X99");
             intelChipsets.Add("Xeon");
 
             memCaps = new List<string>();
@@ -123,9 +121,16 @@ namespace Computer_Drafter.Models
             memFreqs.Add("333");
             memFreqs.Add("400");
             memFreqs.Add("533");
-            memFreqs.Add("DDR");
-            memFreqs.Add("DDR");
-            memFreqs.Add("DDR");
+            memFreqs.Add("667");
+            memFreqs.Add("800");
+            memFreqs.Add("1600");
+            memFreqs.Add("1800+");
+            memFreqs.Add("2133");
+            memFreqs.Add("2400");
+            memFreqs.Add("2666+");
+            memFreqs.Add("2800+");
+            memFreqs.Add("3000+");
+            memFreqs.Add("3200+");
         }
     }
 }
