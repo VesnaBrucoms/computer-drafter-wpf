@@ -62,7 +62,7 @@
                 <TextBox Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" Width="75" Text="{Binding Path=CpuClock, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
                 <TextBlock Grid.Row="3" Grid.Column="4" Text="Socket:" />
-                <ComboBox Grid.Row="4" Grid.Column="4" HorizontalAlignment="Left" Width="75" ItemsSource="{Binding Path=GetCpuSocketList, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" SelectedValue="{Binding Path=SetCpuSocket, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <ComboBox Grid.Row="4" Grid.Column="4" HorizontalAlignment="Left" Width="100" SelectedIndex="0" ItemsSource="{Binding Path=GetCpuSocketList, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" SelectedValue="{Binding Path=SetCpuSocket, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             </Grid>
         </Grid>
         <!--#endregion-->
@@ -99,17 +99,17 @@
                 <TextBox Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Width="150" Text="{Binding Path=MotherboardName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
                 <TextBlock Grid.Row="0" Grid.Column="2" Text="Chipset:" />
-                <ComboBox Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Width="75" />
+                <ComboBox Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Width="100" SelectedIndex="0" ItemsSource="{Binding Path=GetMotherboardChipsetList, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" SelectedValue="{Binding Path=SetMotherboardChipset, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
                 <TextBlock Grid.Row="0" Grid.Column="7" Text="Price:" />
                 <xctk:DecimalUpDown Grid.Row="1" Grid.Column="7" HorizontalAlignment="Left" Width="75" FormatString="C2" Increment="1" Minimum="0" Value="{Binding Path=MotherboardPrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="Memory Capacity:" />
-                <ComboBox Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left" Width="75" />
+                <ComboBox Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left" Width="75" SelectedIndex="0" ItemsSource="{Binding Path=GetMotherboardMemCapList}" SelectedValue="{Binding Path=SetMotherboardMemCap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <TextBlock Grid.Row="3" Grid.Column="2" Text="Memory Type:" />
-                <ComboBox Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" Width="75" />
-                <TextBlock Grid.Row="3" Grid.Column="4" Text="Memory Frequancy:" />
-                <ComboBox Grid.Row="4" Grid.Column="4" HorizontalAlignment="Left" Width="75" />
+                <ComboBox Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" Width="100" SelectedIndex="0" ItemsSource="{Binding Path=GetMotherboardMemTypeList}" SelectedValue="{Binding Path=SetMotherboardMemType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBlock Grid.Row="3" Grid.Column="4" Text="Memory Frequency:" />
+                <ComboBox Grid.Row="4" Grid.Column="4" HorizontalAlignment="Left" Width="75" SelectedIndex="0" ItemsSource="{Binding Path=GetMotherboardMemFreqList}" SelectedValue="{Binding Path=SetMotherboardMemFreq, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             </Grid>
         </Grid>
         <!--#endregion-->

@@ -47,6 +47,7 @@ namespace Computer_Drafter.ViewModels
                 cpu.SelectedBrand = value;
                 OnPropertyChanged("SetCpuBrand");
                 OnPropertyChanged("GetCpuSocketList");
+                OnPropertyChanged("GetMotherboardChipsetList");
             }
         }
 
@@ -103,43 +104,71 @@ namespace Computer_Drafter.ViewModels
             }
         }
 
-        public string MotherboardChipset
+        public List<string> GetMotherboardChipsetList
         {
-            get { return motherboard.Chipset; }
-            set
+            get
             {
-                motherboard.Chipset = value;
-                OnPropertyChanged("MotherboardChipset");
+                if (cpu.SelectedBrand == "AMD")
+                    return motherboard.AmdChipsets;
+                else if (cpu.SelectedBrand == "Intel")
+                    return motherboard.IntelChipsets;
+                else
+                    return new List<string>();
             }
         }
 
-        public string MotherboardMemCap
+        public string SetMotherboardChipset
         {
-            get { return motherboard.MemoryCapacity; }
+            get { return motherboard.SelectedChipset; }
             set
             {
-                motherboard.MemoryCapacity = value;
-                OnPropertyChanged("MotherboardMemCap");
+                motherboard.SelectedChipset = value;
+                OnPropertyChanged("SetMotherboardChipset");
             }
         }
 
-        public string MotherboardMemType
+        public List<string> GetMotherboardMemCapList
         {
-            get { return motherboard.MemoryType; }
+            get { return motherboard.MemoryCapacities; }
+        }
+
+        public string SetMotherboardMemCap
+        {
+            get { return motherboard.SelectedMemoryCapacity; }
             set
             {
-                motherboard.MemoryType = value;
-                OnPropertyChanged("MotherboardMemType");
+                motherboard.SelectedMemoryCapacity = value;
+                OnPropertyChanged("SetMotherboardMemCap");
             }
         }
 
-        public string MotherboardMemFreq
+        public List<string> GetMotherboardMemTypeList
         {
-            get { return motherboard.MemoryFrequancy; }
+            get { return motherboard.MemoryTypes; }
+        }
+
+        public string SetMotherboardMemType
+        {
+            get { return motherboard.SelectedMemoryType; }
             set
             {
-                motherboard.MemoryFrequancy = value;
-                OnPropertyChanged("MotherboardMemFreq");
+                motherboard.SelectedMemoryType = value;
+                OnPropertyChanged("SetMotherboardMemType");
+            }
+        }
+
+        public List<string> GetMotherboardMemFreqList
+        {
+            get { return motherboard.MemoryFrequencies; }
+        }
+
+        public string SetMotherboardMemFreq
+        {
+            get { return motherboard.SelectedMemoryFreq; }
+            set
+            {
+                motherboard.SelectedMemoryFreq = value;
+                OnPropertyChanged("SetMotherboardMemFreq");
             }
         }
         #endregion
