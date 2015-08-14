@@ -11,7 +11,7 @@ using System.Windows.Input;
 
 namespace Computer_Drafter.ViewModels
 {
-    class RamViewModel
+    class RamViewModel : INotifyPropertyChanged
     {
         private ObservableCollection<RamModel> ramModules;
 

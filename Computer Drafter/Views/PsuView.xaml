@@ -4,14 +4,53 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Computer_Drafter.Views"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:viewmodel="clr-namespace:Computer_Drafter.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="786" d:DesignWidth="521">
-    <Grid>
+    <Grid Margin="5,15,5,5">
+        <Grid.DataContext>
+            <viewmodel:PsuViewModel />
+        </Grid.DataContext>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto" />
-        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" FontFamily="Segoe UI" FontSize="12pt" Foreground="#003399" Text="Select PSU Settings and Features" />
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="0.1*" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="0.1*" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Name:" />
+            <TextBox Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Width="150" Text="{Binding Path=PsuName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            
+            <TextBlock Grid.Row="0" Grid.Column="6" Text="Price:" />
+            <xctk:DecimalUpDown Grid.Row="1" Grid.Column="6" HorizontalAlignment="Left" Width="75" FormatString="C2" Increment="1" Minimum="0" Value="{Binding Path=PsuPrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Type:" />
+            <ComboBox Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left" Width="75" SelectedIndex="0" ItemsSource="{Binding Path=GetPsuTypesList}" SelectedValue="{Binding Path=SetPsuType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            
+            <TextBlock Grid.Row="3" Grid.Column="2" Text="Form factor:" />
+            <ComboBox Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" Width="75" SelectedIndex="0" ItemsSource="{Binding Path=GetPsuFormsList}" SelectedValue="{Binding Path=SetPsuForm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            
+            <TextBlock Grid.Row="3" Grid.Column="4" Text="Wattage:" />
+            <TextBox Grid.Row="4" Grid.Column="4" HorizontalAlignment="Left" Width="75" Text="{Binding Path=PsuWattage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        </Grid>
     </Grid>
 </UserControl>
