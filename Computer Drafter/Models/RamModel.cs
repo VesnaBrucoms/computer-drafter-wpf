@@ -15,6 +15,11 @@ namespace Computer_Drafter.Models
         private string casLatency;
 
         #region Properties
+        public RamModel GetThis
+        {
+            get { return this; }
+        }
+
         public int PartNumber
         {
             get { return number; }

@@ -59,7 +59,7 @@
                                 <ComboBox Grid.Row="2" Grid.Column="0" Width="75" HorizontalAlignment="Left" SelectedIndex="0" ItemsSource="{Binding Capacities}" SelectedValue="{Binding Path=SelectedCapacity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                                 <ComboBox Grid.Row="2" Grid.Column="3" Width="75" HorizontalAlignment="Left" SelectedIndex="0" ItemsSource="{Binding Frequencies}" SelectedValue="{Binding Path=SelectedFrequency, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
-                                <Button Grid.Row="4" Grid.Column="4" Content="Remove" Command="{Binding ElementName=ParentGrid, Path=DataContext.RemoveModuleCommand}" CommandParameter="{Binding PartNumber}" />
+                                <Button Grid.Row="4" Grid.Column="4" Content="Remove" Command="{Binding ElementName=ParentGrid, Path=DataContext.RemoveModuleCommand}" CommandParameter="{Binding GetThis}" />
                             </Grid>
                         </Grid>
                     </DataTemplate>

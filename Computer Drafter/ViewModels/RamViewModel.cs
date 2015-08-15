@@ -53,9 +53,11 @@ namespace Computer_Drafter.ViewModels
 
         private void RemoveModule(object parameter)
         {
-            int moduleNumber = (int)parameter;
+            //int moduleNumber = (int)parameter;
             //Console.WriteLine("YAY!" + moduleNumber);
-            ramModules.RemoveAt(moduleNumber - 1);
+            //ramModules.RemoveAt(moduleNumber - 1);
+            RamModel model = (RamModel)parameter;
+            ramModules.Remove(model);
 
             int count = 0;
             foreach (RamModel module in ramModules)
