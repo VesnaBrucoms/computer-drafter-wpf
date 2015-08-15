@@ -27,6 +27,11 @@ namespace Computer_Drafter.ViewModels
         {
             get { return new DelegateCommand(AddModule, CanAddModule); }
         }
+
+        public ICommand RemoveModuleCommand
+        {
+            get { return new DelegateCommand(RemoveModule, CanRemoveModule); }
+        }
         #endregion
 
         public RamViewModel()
@@ -34,15 +39,39 @@ namespace Computer_Drafter.ViewModels
             ramModules = new ObservableCollection<RamModel>();
         }
 
+        #region Commands
         private void AddModule(object parameter)
         {
             ramModules.Add(new RamModel());
+            ramModules[ramModules.Count - 1].PartNumber = ramModules.Count;
         }
 
         private bool CanAddModule()
         {
             return true;
         }
+
+        private void RemoveModule(object parameter)
+        {
+            int moduleNumber = (int)parameter;
+            //Console.WriteLine("YAY!" + moduleNumber);
+            ramModules.RemoveAt(moduleNumber - 1);
+
+            int count = 0;
+            foreach (RamModel module in ramModules)
+            {
+                if (module.PartNumber - 1 != count)
+                    module.PartNumber = count + 1;
+
+                count++;
+            }
+        }
+
+        private bool CanRemoveModule()
+        {
+            return true;
+        }
+        #endregion
 
         public event PropertyChangedEventHandler PropertyChanged;
 

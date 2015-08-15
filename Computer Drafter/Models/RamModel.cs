@@ -6,14 +6,26 @@ using System.Threading.Tasks;
 
 namespace Computer_Drafter.Models
 {
-    class RamModel : PartModel
+    class RamModel : PartModel, IMultiPartModel
     {
+        private int number;
         private List<string> capacities;
         private string selCapacity;
         private string selFrequency;
         private string casLatency;
 
         #region Properties
+        public int PartNumber
+        {
+            get { return number; }
+            set { number = value; }
+        }
+
+        public string PartNumberString
+        {
+            get { return "Module " + number; }
+        }
+
         public List<string> Capacities
         {
             get { return capacities; }

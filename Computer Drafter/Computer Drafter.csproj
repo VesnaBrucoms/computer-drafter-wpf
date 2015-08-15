@@ -68,6 +68,7 @@
     <Compile Include="Models\ComputerModel.cs" />
     <Compile Include="Models\CpuModel.cs" />
     <Compile Include="Models\FrequencyData.cs" />
+    <Compile Include="Models\IMultiPartModel.cs" />
     <Compile Include="Models\MotherboardModel.cs" />
     <Compile Include="Models\PartModel.cs" />
     <Compile Include="Models\PsuModel.cs" />
