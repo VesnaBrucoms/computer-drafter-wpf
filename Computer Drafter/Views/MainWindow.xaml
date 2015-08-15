@@ -26,6 +26,8 @@
                 <MenuItem Header="Save" />
                 <MenuItem Header="Save As..." />
                 <Separator />
+                <MenuItem Header="Print..." />
+                <Separator />
                 <MenuItem Header="_Exit" Click="ApplicationClose_Click" />
             </MenuItem>
             <MenuItem Header="Help">

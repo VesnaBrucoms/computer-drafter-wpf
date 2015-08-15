@@ -9,5 +9,6 @@ namespace Computer_Drafter.Models
     interface IMultiPartModel
     {
         int PartNumber { get; set; }
+        string PartNumberString { get; }
     }
 }

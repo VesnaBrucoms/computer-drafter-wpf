@@ -37,7 +37,7 @@
                                 <RowDefinition Height="auto" />
                             </Grid.RowDefinitions>
 
-                            <TextBlock Grid.Row="0" Text="{Binding PartNumberString, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Grid.Row="0" Text="{Binding PartNumberString, UpdateSourceTrigger=PropertyChanged}" />
                             <Grid Grid.Row="2" Margin="10,0,0,0">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="auto" />
