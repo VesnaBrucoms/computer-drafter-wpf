@@ -7,17 +7,16 @@ using System.Threading.Tasks;
 
 namespace Computer_Drafter.Models
 {
-    class GpuModel : PartModel, IMultiPartModel, INotifyPropertyChanged
+    class SsdModel : PartModel, IMultiPartModel, INotifyPropertyChanged
     {
         private int number;
-        private string cores;
-        private string clock;
-        private string memory;
-        private string memBit;
-        private string memClock;
+        private string capacity;
+        private string read;
+        private string write;
+        private string selConnection;
 
         #region Properties
-        public GpuModel GetInstance
+        private SsdModel GetInstance
         {
             get { return this; }
         }
@@ -35,37 +34,36 @@ namespace Computer_Drafter.Models
 
         public string PartNumberString
         {
-            get { return "GPU " + number; }
+            get { return "Drive " + number; }
         }
 
-        public string Cores
+        public string Capacity
         {
-            get { return cores; }
-            set { cores = value; }
+            get { return capacity; }
+            set { capacity = value; }
         }
 
-        public string Clock
+        public string Read
         {
-            get { return clock; }
-            set { clock = value; }
+            get { return read; }
+            set { read = value; }
         }
 
-        public string Memory
+        public string Write
         {
-            get { return memory; }
-            set { memory = value; }
+            get { return write; }
+            set { write = value; }
         }
 
-        public string MemoryBitRate
+        public List<string> GetConnections
         {
-            get { return memBit; }
-            set { memBit = value; }
+            get { return DriveData.GetConnections; }
         }
 
-        public string MemoryClock
+        public string SelectedConnection
         {
-            get { return memClock; }
-            set { memClock = value; }
+            get { return selConnection; }
+            set { selConnection = value; }
         }
         #endregion
 

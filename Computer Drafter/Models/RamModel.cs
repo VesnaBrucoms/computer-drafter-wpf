@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Computer_Drafter.Models
 {
-    class RamModel : PartModel, IMultiPartModel
+    class RamModel : PartModel, IMultiPartModel, INotifyPropertyChanged
     {
         private int number;
         private List<string> capacities;
@@ -15,7 +16,7 @@ namespace Computer_Drafter.Models
         private string casLatency;
 
         #region Properties
-        public RamModel GetThis
+        public RamModel GetInstance
         {
             get { return this; }
         }
@@ -23,7 +24,12 @@ namespace Computer_Drafter.Models
         public int PartNumber
         {
             get { return number; }
-            set { number = value; }
+            set
+            {
+                number = value;
+                OnPropertyChanged("PartNumber");
+                OnPropertyChanged("PartNumberString");
+            }
         }
 
         public string PartNumberString
@@ -70,6 +76,17 @@ namespace Computer_Drafter.Models
             capacities.Add("4GB");
             capacities.Add("8GB");
             capacities.Add("16GB");
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+                Console.WriteLine(propertyName);
+            }
         }
     }
 }
