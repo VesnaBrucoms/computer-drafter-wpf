@@ -11,53 +11,53 @@ using System.Windows.Input;
 
 namespace Computer_Drafter.ViewModels
 {
-    class SsdViewModel : INotifyPropertyChanged
+    class HddViewModel : INotifyPropertyChanged
     {
-        private ObservableCollection<SsdModel> ssdModels;
+        private ObservableCollection<HddModel> hddModels;
 
         #region ModelProperties
-        public ObservableCollection<SsdModel> GetSsdModels
+        public ObservableCollection<HddModel> GetHddModels
         {
-            get { return ssdModels; }
+            get { return hddModels; }
         }
         #endregion
 
         #region CommandProperties
-        public ICommand AddSsdCommand
+        public ICommand AddHddCommand
         {
-            get { return new DelegateCommand(AddSsd, CanAddSsd); }
+            get { return new DelegateCommand(AddHdd, CanAddHdd); }
         }
 
-        public ICommand RemoveSsdCommand
+        public ICommand RemoveHddCommand
         {
-            get { return new DelegateCommand(RemoveSsd, CanRemoveSsd); }
+            get { return new DelegateCommand(RemoveHdd, CanRemoveHdd); }
         }
         #endregion
 
-        public SsdViewModel()
+        public HddViewModel()
         {
-            ssdModels = new ObservableCollection<SsdModel>();
+            hddModels = new ObservableCollection<HddModel>();
         }
 
         #region Commands
-        private void AddSsd(object parameter)
+        private void AddHdd(object parameter)
         {
-            ssdModels.Add(new SsdModel());
-            ssdModels[ssdModels.Count - 1].PartNumber = ssdModels.Count;
+            hddModels.Add(new HddModel());
+            hddModels[hddModels.Count - 1].PartNumber = hddModels.Count;
         }
 
-        private bool CanAddSsd()
+        private bool CanAddHdd()
         {
             return true;
         }
 
-        private void RemoveSsd(object parameter)
+        private void RemoveHdd(object parameter)
         {
-            SsdModel model = (SsdModel)parameter;
-            ssdModels.Remove(model);
+            HddModel model = (HddModel)parameter;
+            hddModels.Remove(model);
 
             int count = 0;
-            foreach (SsdModel module in ssdModels)
+            foreach (HddModel module in hddModels)
             {
                 if (module.PartNumber - 1 != count)
                     module.PartNumber = count + 1;
@@ -66,7 +66,7 @@ namespace Computer_Drafter.ViewModels
             }
         }
 
-        private bool CanRemoveSsd()
+        private bool CanRemoveHdd()
         {
             return true;
         }

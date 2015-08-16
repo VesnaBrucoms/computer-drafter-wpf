@@ -4,14 +4,71 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Computer_Drafter.Views"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:viewmodel="clr-namespace:Computer_Drafter.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="786" d:DesignWidth="521">
-    <Grid>
+    <Grid x:Name="ParentGrid" Margin="5,15,5,5">
+        <Grid.DataContext>
+            <viewmodel:SsdViewModel />
+        </Grid.DataContext>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="auto" />
         </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" FontFamily="Segoe UI" FontSize="12pt" Foreground="#003399" Text="Select SSD Drive Settings and Features" />
+        <Button Grid.Row="1" Grid.Column="2" Content="New" Command="{Binding AddSsdCommand}" />
+
+        <ScrollViewer Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Height="{Binding Path=ActualHeight, RelativeSource={RelativeSource TemplatedParent}}" CanContentScroll="True" VerticalScrollBarVisibility="Auto">
+            <ItemsControl Margin="10,30,10,10" ItemsSource="{Binding GetSsdModels}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="10,0,0,20">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="10" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row="0" Text="{Binding PartNumberString, UpdateSourceTrigger=PropertyChanged}" />
+                            <Grid Grid.Row="2" Margin="10,0,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="10" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="10" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="10" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="0.1*" />
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="0.5*" />
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <TextBox Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Width="150" Text="{Binding Name}" />
+                                <xctk:DecimalUpDown Grid.Row="0" Grid.Column="4" HorizontalAlignment="Left" Width="75" FormatString="C2" Increment="1" Minimum="0" Value="{Binding Price}" />
+                                <TextBox Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Width="75" Text="{Binding Capacity}" />
+                                <ComboBox Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Width="75" ItemsSource="{Binding GetConnections}" SelectedValue="{Binding SelectedConnection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <TextBox Grid.Row="4" Grid.Column="0" HorizontalAlignment="Left" Width="75" Text="{Binding Read}" />
+                                <TextBox Grid.Row="4" Grid.Column="2" HorizontalAlignment="Left" Width="75" Text="{Binding Write}" />
+                                
+                                <Button Grid.Row="6" Grid.Column="4" Content="Remove" Command="{Binding ElementName=ParentGrid, Path=DataContext.RemoveSsdCommand}" CommandParameter="{Binding GetInstance}" />
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
     </Grid>
 </UserControl>

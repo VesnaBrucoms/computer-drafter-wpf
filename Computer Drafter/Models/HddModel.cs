@@ -36,7 +36,7 @@ namespace Computer_Drafter.Models
 
         public string PartNumberString
         {
-            get { return "Drive" + number; }
+            get { return "Drive " + number; }
         }
 
         public string Capacity

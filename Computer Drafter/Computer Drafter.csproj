@@ -80,6 +80,7 @@
     <Compile Include="ViewModels\BasicViewModel.cs" />
     <Compile Include="ViewModels\Commands\DelegateCommand.cs" />
     <Compile Include="ViewModels\GpuViewModel.cs" />
+    <Compile Include="ViewModels\HddViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\PsuViewModel.cs" />
     <Compile Include="ViewModels\RamViewModel.cs" />

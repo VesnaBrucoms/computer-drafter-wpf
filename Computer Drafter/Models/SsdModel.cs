@@ -16,7 +16,7 @@ namespace Computer_Drafter.Models
         private string selConnection;
 
         #region Properties
-        private SsdModel GetInstance
+        public SsdModel GetInstance
         {
             get { return this; }
         }
