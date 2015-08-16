@@ -67,6 +67,7 @@
     <Compile Include="InputOutput\File.cs" />
     <Compile Include="Models\ComputerModel.cs" />
     <Compile Include="Models\CpuModel.cs" />
+    <Compile Include="Models\DiskDriveModel.cs" />
     <Compile Include="Models\DriveData.cs" />
     <Compile Include="Models\FrequencyData.cs" />
     <Compile Include="Models\GpuModel.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Models\SsdModel.cs" />
     <Compile Include="ViewModels\BasicViewModel.cs" />
     <Compile Include="ViewModels\Commands\DelegateCommand.cs" />
+    <Compile Include="ViewModels\DiskDriveViewModel.cs" />
     <Compile Include="ViewModels\GpuViewModel.cs" />
     <Compile Include="ViewModels\HddViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />

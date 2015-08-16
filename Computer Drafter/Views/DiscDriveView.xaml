@@ -4,14 +4,44 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Computer_Drafter.Views"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:viewmodel="clr-namespace:Computer_Drafter.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="786" d:DesignWidth="521">
-    <Grid>
+    <Grid x:Name="ParentGrid" Margin="5,15,5,5">
+        <Grid.DataContext>
+            <viewmodel:DiscDriveViewModel />
+        </Grid.DataContext>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="auto" />
         </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" FontFamily="Segoe UI" FontSize="12pt" Foreground="#003399" Text="Select Disc Drive Settings and Features" />
+        <Button Grid.Row="1" Grid.Column="2" Content="New" Command="{Binding AddDiscDriveCommand}" />
+
+        <ScrollViewer Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Height="{Binding Path=ActualHeight, RelativeSource={RelativeSource TemplatedParent}}" CanContentScroll="True" VerticalScrollBarVisibility="Visible">
+            <ItemsControl ItemsSource="{Binding GetDiscDrives}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="10,0,0,20">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="10" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            
+                            <TextBlock Grid.Row="0" Text="{Binding PartNumberString}" />
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
     </Grid>
 </UserControl>
