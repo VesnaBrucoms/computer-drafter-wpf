@@ -38,6 +38,28 @@
                             </Grid.RowDefinitions>
                             
                             <TextBlock Grid.Row="0" Text="{Binding PartNumberString}" />
+                            <Grid Grid.Row="2" Margin="10,0,0,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="10" />
+                                    <RowDefinition Height="auto" />
+                                    <RowDefinition Height="10" />
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="0.1*" />
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="0.5*" />
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <TextBox Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Width="150" Text="{Binding Name}" />
+                                <xctk:DecimalUpDown Grid.Row="0" Grid.Column="4" HorizontalAlignment="Left" Width="75" FormatString="C2" Increment="1" Minimum="0" Value="{Binding Price}" />
+                                <ComboBox Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Width="75" ItemsSource="{Binding GetTypes}" SelectedValue="{Binding SelectedType}" />
+                                
+                                <Button Grid.Row="4" Grid.Column="4" Content="Remove" Command="{Binding ElementName=ParentGrid, Path=DataContext.RemoveDiscDriveCommand}" CommandParameter="{Binding GetInstance}" />
+                            </Grid>
                         </Grid>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
