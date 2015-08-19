@@ -4,14 +4,107 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Computer_Drafter.Views"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:viewmodel="clr-namespace:Computer_Drafter.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="786" d:DesignWidth="521">
-    <Grid>
+    <Grid x:Name="ParentGrid" Margin="5,15,5,5">
+        <Grid.DataContext>
+            <viewmodel:CaseViewModel />
+        </Grid.DataContext>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto" />
-        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" FontFamily="Segoe UI" FontSize="12pt" Foreground="#003399" Text="Select Case Settings and Features" />
+        <Grid Grid.Row="2" Margin="15,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="15" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="0.2*" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="0.1*" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="0.1*" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="0.1*" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Name:" />
+            <TextBox Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Width="150" Text="{Binding Path=CaseName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            
+            <TextBlock Grid.Row="0" Grid.Column="2" Text="Form factor:" />
+            <ComboBox Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" Width="75" ItemsSource="{Binding GetCaseFormsList}" SelectedValue="{Binding Path=SetCaseForm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            
+            <TextBlock Grid.Row="0" Grid.Column="4" Text="5.25'' bays:" />
+            <ComboBox Grid.Row="1" Grid.Column="4" HorizontalAlignment="Left" Width="50" ItemsSource="{Binding GetCaseBayNumbersList}" SelectedValue="{Binding Path=SetCaseFiveBays, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            
+            <TextBlock Grid.Row="0" Grid.Column="6" Text="3.5'' bays:" />
+            <ComboBox Grid.Row="1" Grid.Column="6" HorizontalAlignment="Left" Width="50" ItemsSource="{Binding GetCaseBayNumbersList}" SelectedValue="{Binding Path=SetCaseThreeBays, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            
+            <TextBlock Grid.Row="0" Grid.Column="8" Text="2.5'' bays:" />
+            <ComboBox Grid.Row="1" Grid.Column="8" HorizontalAlignment="Left" Width="50" ItemsSource="{Binding GetCaseBayNumbersList}" SelectedValue="{Binding Path=SetCaseTwoBays, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            
+            <TextBlock Grid.Row="0" Grid.Column="10" Text="Price:" />
+            <xctk:DecimalUpDown Grid.Row="1" Grid.Column="10" HorizontalAlignment="Left" Width="75" FormatString="C2" Increment="1" Minimum="0" Value="{Binding Path=CasePrice, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+            <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="11">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="0.3*" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+
+                <GroupBox Grid.Column="0" Header="Accepted form factors">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="15" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="15" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <CheckBox Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Content="Mini-ITX" IsChecked="{Binding Path=CaseAcceptsItx, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Content="Micro-ATX" IsChecked="{Binding Path=CaseAcceptsMatx, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Content="ATX" IsChecked="{Binding Path=CaseAcceptsAtx, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Content="E-ATX" IsChecked="{Binding Path=CaseAcceptsEatx, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </Grid>
+                </GroupBox>
+                <GroupBox Grid.Column="2" Header="Extras">
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="15" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="15" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                    
+                        <CheckBox Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Content="USB 3.0" IsChecked="{Binding Path=CaseHasUsbThree, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" Content="PSU included" IsChecked="{Binding Path=CaseHasPsu, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" Content="Window" IsChecked="{Binding Path=CaseHasWindow, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        <CheckBox Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" Content="Toolless installation" IsChecked="{Binding Path=CaseIsToolless, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </Grid>
     </Grid>
 </UserControl>

@@ -65,6 +65,7 @@
     <Compile Include="IniSettings\SettingKey.cs" />
     <Compile Include="InputOutput\Directory.cs" />
     <Compile Include="InputOutput\File.cs" />
+    <Compile Include="Models\CaseModel.cs" />
     <Compile Include="Models\ComputerModel.cs" />
     <Compile Include="Models\CpuModel.cs" />
     <Compile Include="Models\DiskDriveModel.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="Models\RamModel.cs" />
     <Compile Include="Models\SsdModel.cs" />
     <Compile Include="ViewModels\BasicViewModel.cs" />
+    <Compile Include="ViewModels\CaseViewModel.cs" />
     <Compile Include="ViewModels\Commands\DelegateCommand.cs" />
     <Compile Include="ViewModels\DiskDriveViewModel.cs" />
     <Compile Include="ViewModels\GpuViewModel.cs" />
