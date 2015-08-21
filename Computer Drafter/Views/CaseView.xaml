@@ -8,7 +8,7 @@
              xmlns:viewmodel="clr-namespace:Computer_Drafter.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="786" d:DesignWidth="521">
-    <Grid x:Name="ParentGrid" Margin="5,15,5,5">
+    <Grid Margin="5,15,5,5">
         <Grid.DataContext>
             <viewmodel:CaseViewModel />
         </Grid.DataContext>

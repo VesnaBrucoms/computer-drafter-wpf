@@ -75,6 +75,7 @@
     <Compile Include="Models\HddModel.cs" />
     <Compile Include="Models\IMultiPartModel.cs" />
     <Compile Include="Models\MotherboardModel.cs" />
+    <Compile Include="Models\OsModel.cs" />
     <Compile Include="Models\PartModel.cs" />
     <Compile Include="Models\PsuModel.cs" />
     <Compile Include="Models\RamModel.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="ViewModels\GpuViewModel.cs" />
     <Compile Include="ViewModels\HddViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\OtherViewModel.cs" />
     <Compile Include="ViewModels\PsuViewModel.cs" />
     <Compile Include="ViewModels\RamViewModel.cs" />
     <Compile Include="ViewModels\SsdViewModel.cs" />
