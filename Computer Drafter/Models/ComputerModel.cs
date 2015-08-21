@@ -10,7 +10,16 @@ namespace Computer_Drafter.Models
     {
         private CpuModel cpu;
         private MotherboardModel motherboard;
+        private List<RamModel> rams;
+        private List<GpuModel> gpus;
+        private List<SsdModel> ssds;
+        private List<HddModel> hdds;
+        private List<DiscDriveModel> discDrives;
+        private PsuModel psu;
+        private CaseModel caseModel;
+        private OsModel os;
 
+        #region Properties
         public CpuModel Cpu
         {
             get { return cpu; }
@@ -22,5 +31,6 @@ namespace Computer_Drafter.Models
             get { return motherboard; }
             set { motherboard = value; }
         }
+        #endregion
     }
 }
