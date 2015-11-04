@@ -40,31 +40,31 @@
                     <view:OverviewView />
                 </TabItem>
                 <TabItem Header="Basics">
-                    <view:BasicsView />
+                    <view:BasicsView DataContext="{Binding Path=GetBasicViewModel}"/>
                 </TabItem>
                 <TabItem Header="RAM">
-                    <view:RamView />
+                    <view:RamView DataContext="{Binding Path=GetRamViewModel}" />
                 </TabItem>
                 <TabItem Header="GPU">
-                    <view:GpuView />
+                    <view:GpuView DataContext="{Binding Path=GetGpuViewModel}" />
                 </TabItem>
                 <TabItem Header="SSD">
-                    <view:SsdView />
+                    <view:SsdView DataContext="{Binding Path=GetSsdViewModel}" />
                 </TabItem>
                 <TabItem Header="HDD">
-                    <view:HddView />
+                    <view:HddView DataContext="{Binding Path=GetHddViewModel}" />
                 </TabItem>
                 <TabItem Header="Disc Drive">
-                    <view:DiscDriveView />
+                    <view:DiscDriveView DataContext="{Binding Path=GetDiscViewModel}" />
                 </TabItem>
                 <TabItem Header="PSU">
-                    <view:PsuView />
+                    <view:PsuView DataContext="{Binding Path=GetPsuViewModel}" />
                 </TabItem>
                 <TabItem Header="Case">
-                    <view:CaseView />
+                    <view:CaseView DataContext="{Binding Path=GetCaseViewModel}" />
                 </TabItem>
                 <TabItem Header="Other">
-                    <view:OtherView />
+                    <view:OtherView DataContext="{Binding Path=GetOtherViewModel}" />
                 </TabItem>
             </TabControl>
         </Grid>

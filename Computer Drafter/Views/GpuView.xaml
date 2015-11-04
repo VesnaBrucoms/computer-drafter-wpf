@@ -9,9 +9,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="786" d:DesignWidth="521">
     <Grid x:Name="ParentGrid" Margin="5,15,5,5">
-        <Grid.DataContext>
-            <viewmodel:GpuViewModel />
-        </Grid.DataContext>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />

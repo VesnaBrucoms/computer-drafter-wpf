@@ -191,10 +191,17 @@ namespace Computer_Drafter.ViewModels
         #region CommandProperties
         #endregion
 
-        public BasicViewModel()
+        public BasicViewModel(MainWindowViewModel parent)
         {
-            cpu = new CpuModel();
-            motherboard = new MotherboardModel();
+            parent.DraftOpened += new MainWindowViewModel.NewDraftEventHandler(newComputerDraftUpdateProperties);
+
+            cpu = parent.GetComputer.GetCpu;
+            motherboard = parent.GetComputer.GetMotherboard;
+        }
+
+        private void newComputerDraftUpdateProperties()
+        {
+            //
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
