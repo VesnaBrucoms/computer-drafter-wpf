@@ -34,9 +34,16 @@ namespace Computer_Drafter.ViewModels
         }
         #endregion
 
-        public OtherViewModel()
+        public OtherViewModel(MainWindowViewModel parent)
         {
-            osModel = new OsModel();
+            parent.DraftOpened += new MainWindowViewModel.NewDraftEventHandler(newComputerDraftUpdateProperties);
+
+            osModel = parent.GetComputer.GetOs;
+        }
+
+        private void newComputerDraftUpdateProperties()
+        {
+            //
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

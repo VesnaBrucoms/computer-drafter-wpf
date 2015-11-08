@@ -168,9 +168,16 @@ namespace Computer_Drafter.ViewModels
         #region CommandProperties
         #endregion
 
-        public CaseViewModel()
+        public CaseViewModel(MainWindowViewModel parent)
         {
-            caseModel = new CaseModel();
+            parent.DraftOpened += new MainWindowViewModel.NewDraftEventHandler(newComputerDraftUpdateProperties);
+
+            caseModel = parent.GetComputer.GetCase;
+        }
+
+        private void newComputerDraftUpdateProperties()
+        {
+            //
         }
 
         #region Commands

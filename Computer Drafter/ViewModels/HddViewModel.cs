@@ -34,9 +34,16 @@ namespace Computer_Drafter.ViewModels
         }
         #endregion
 
-        public HddViewModel()
+        public HddViewModel(MainWindowViewModel parent)
         {
-            hddModels = new ObservableCollection<HddModel>();
+            parent.DraftOpened += new MainWindowViewModel.NewDraftEventHandler(newComputerDraftUpdateProperties);
+
+            hddModels = parent.GetComputer.GetHdds;
+        }
+
+        private void newComputerDraftUpdateProperties()
+        {
+            //
         }
 
         #region Commands

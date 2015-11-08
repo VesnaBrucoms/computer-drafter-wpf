@@ -91,14 +91,14 @@ namespace Computer_Drafter.ViewModels
             computer = new ComputerModel();
 
             basicViewModel = new BasicViewModel(this);
-            ramViewModel = new RamViewModel();
-            gpuViewModel = new GpuViewModel();
-            ssdViewModel = new SsdViewModel();
-            hddViewModel = new HddViewModel();
-            discViewModel = new DiscDriveViewModel();
-            psuViewModel = new PsuViewModel();
-            caseViewModel = new CaseViewModel();
-            otherViewModel = new OtherViewModel();
+            ramViewModel = new RamViewModel(this);
+            gpuViewModel = new GpuViewModel(this);
+            ssdViewModel = new SsdViewModel(this);
+            hddViewModel = new HddViewModel(this);
+            discViewModel = new DiscDriveViewModel(this);
+            psuViewModel = new PsuViewModel(this);
+            caseViewModel = new CaseViewModel(this);
+            otherViewModel = new OtherViewModel(this);
 
             windowTitle = "Computer Drafter";
             loadedDraft = "test";

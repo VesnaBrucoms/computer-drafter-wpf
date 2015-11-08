@@ -77,9 +77,16 @@ namespace Computer_Drafter.ViewModels
         #region CommandProperties
         #endregion
 
-        public PsuViewModel()
+        public PsuViewModel(MainWindowViewModel parent)
         {
-            psuModel = new PsuModel();
+            parent.DraftOpened += new MainWindowViewModel.NewDraftEventHandler(newComputerDraftUpdateProperties);
+
+            psuModel = parent.GetComputer.GetPsu;
+        }
+
+        private void newComputerDraftUpdateProperties()
+        {
+            //
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

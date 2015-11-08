@@ -34,9 +34,16 @@ namespace Computer_Drafter.ViewModels
         }
         #endregion
 
-        public SsdViewModel()
+        public SsdViewModel(MainWindowViewModel parent)
         {
-            ssdModels = new ObservableCollection<SsdModel>();
+            parent.DraftOpened += new MainWindowViewModel.NewDraftEventHandler(newComputerDraftUpdateProperties);
+
+            ssdModels = parent.GetComputer.GetSsds;
+        }
+
+        private void newComputerDraftUpdateProperties()
+        {
+            //
         }
 
         #region Commands

@@ -34,9 +34,16 @@ namespace Computer_Drafter.ViewModels
         }
         #endregion
 
-        public DiscDriveViewModel()
+        public DiscDriveViewModel(MainWindowViewModel parent)
         {
-            discDrives = new ObservableCollection<DiscDriveModel>();
+            parent.DraftOpened += new MainWindowViewModel.NewDraftEventHandler(newComputerDraftUpdateProperties);
+
+            discDrives = parent.GetComputer.GetDiscDrives;
+        }
+
+        private void newComputerDraftUpdateProperties()
+        {
+            //
         }
 
         #region Commands

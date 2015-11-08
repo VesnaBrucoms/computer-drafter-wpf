@@ -34,9 +34,16 @@ namespace Computer_Drafter.ViewModels
         }
         #endregion
 
-        public RamViewModel()
+        public RamViewModel(MainWindowViewModel parent)
         {
-            ramModules = new ObservableCollection<RamModel>();
+            parent.DraftOpened += new MainWindowViewModel.NewDraftEventHandler(newComputerDraftUpdateProperties);
+
+            ramModules = parent.GetComputer.GetRams;
+        }
+
+        private void newComputerDraftUpdateProperties()
+        {
+            //
         }
 
         #region Commands

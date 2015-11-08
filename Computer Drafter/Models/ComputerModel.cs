@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,11 +11,11 @@ namespace Computer_Drafter.Models
     {
         private CpuModel cpu;
         private MotherboardModel motherboard;
-        private List<RamModel> rams;
-        private List<GpuModel> gpus;
-        private List<SsdModel> ssds;
-        private List<HddModel> hdds;
-        private List<DiscDriveModel> discDrives;
+        private ObservableCollection<RamModel> rams;
+        private ObservableCollection<GpuModel> gpus;
+        private ObservableCollection<SsdModel> ssds;
+        private ObservableCollection<HddModel> hdds;
+        private ObservableCollection<DiscDriveModel> discDrives;
         private PsuModel psu;
         private CaseModel caseModel;
         private OsModel os;
@@ -30,27 +31,27 @@ namespace Computer_Drafter.Models
             get { return motherboard; }
         }
 
-        public List<RamModel> GetRams
+        public ObservableCollection<RamModel> GetRams
         {
             get { return rams; }
         }
 
-        public List<GpuModel> GetGpus
+        public ObservableCollection<GpuModel> GetGpus
         {
             get { return gpus; }
         }
 
-        public List<SsdModel> GetSsds
+        public ObservableCollection<SsdModel> GetSsds
         {
             get { return ssds; }
         }
 
-        public List<HddModel> GetHdds
+        public ObservableCollection<HddModel> GetHdds
         {
             get { return hdds; }
         }
 
-        public List<DiscDriveModel> GetDiscDrives
+        public ObservableCollection<DiscDriveModel> GetDiscDrives
         {
             get { return discDrives; }
         }
@@ -75,11 +76,11 @@ namespace Computer_Drafter.Models
         {
             cpu = new CpuModel();
             motherboard = new MotherboardModel();
-            rams = new List<RamModel>();
-            gpus = new List<GpuModel>();
-            ssds = new List<SsdModel>();
-            hdds = new List<HddModel>();
-            discDrives = new List<DiscDriveModel>();
+            rams = new ObservableCollection<RamModel>();
+            gpus = new ObservableCollection<GpuModel>();
+            ssds = new ObservableCollection<SsdModel>();
+            hdds = new ObservableCollection<HddModel>();
+            discDrives = new ObservableCollection<DiscDriveModel>();
             psu = new PsuModel();
             caseModel = new CaseModel();
             os = new OsModel();

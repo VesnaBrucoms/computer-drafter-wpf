@@ -34,9 +34,16 @@ namespace Computer_Drafter.ViewModels
         }
         #endregion
 
-        public GpuViewModel()
+        public GpuViewModel(MainWindowViewModel parent)
         {
-            gpuModules = new ObservableCollection<GpuModel>();
+            parent.DraftOpened += new MainWindowViewModel.NewDraftEventHandler(newComputerDraftUpdateProperties);
+
+            gpuModules = parent.GetComputer.GetGpus;
+        }
+
+        private void newComputerDraftUpdateProperties()
+        {
+            //
         }
 
         #region Commands
